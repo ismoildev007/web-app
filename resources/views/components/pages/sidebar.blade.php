@@ -21,36 +21,42 @@
                         <span class="nxl-mtext">Dashboards</span>
                     </a>
                 </li>
-{{--                <li class="nxl-item nxl-hasmenu">--}}
-{{--                    <a href="{{ route('about.index') }}" class="nxl-link">--}}
-{{--                        <span class="nxl-micon"><i class="feather-info"></i></span> <!-- About icon -->--}}
-{{--                        <span class="nxl-mtext">About</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nxl-item nxl-hasmenu">--}}
-{{--                    <a href="{{ route('news.index') }}" class="nxl-link">--}}
-{{--                        <span class="nxl-micon"><i class="feather-globe"></i></span> <!-- News icon -->--}}
-{{--                        <span class="nxl-mtext">News</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nxl-item nxl-hasmenu">--}}
-{{--                    <a href="{{ route('services.index') }}" class="nxl-link">--}}
-{{--                        <span class="nxl-micon"><i class="feather-briefcase"></i></span> <!-- Services icon -->--}}
-{{--                        <span class="nxl-mtext">Service</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nxl-item nxl-hasmenu">--}}
-{{--                    <a href="{{ route('faqs.index') }}" class="nxl-link">--}}
-{{--                        <span class="nxl-micon"><i class="feather-help-circle"></i></span> <!-- FAQ icon -->--}}
-{{--                        <span class="nxl-mtext">Faq</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nxl-item nxl-hasmenu">--}}
-{{--                    <a href="{{ route('contact.index') }}" class="nxl-link">--}}
-{{--                        <span class="nxl-micon"><i class="feather-mail"></i></span> <!-- Contact icon -->--}}
-{{--                        <span class="nxl-mtext">Contact</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('abouts.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-info"></i></span> <!-- About icon -->
+                        <span class="nxl-mtext">About</span>
+                    </a>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('news.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-globe"></i></span> <!-- News icon -->
+                        <span class="nxl-mtext">News</span>
+                    </a>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('products.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-briefcase"></i></span> <!-- Products icon -->
+                        <span class="nxl-mtext">Products</span>
+                    </a>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('vacancies.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-help-circle"></i></span> <!-- FAQ icon -->
+                        <span class="nxl-mtext">Vacancies</span>
+                    </a>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('contacts.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-mail"></i></span> <!-- Contact icon -->
+                        <span class="nxl-mtext">Contact</span>
+                    </a>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="{{ route('candidants.index') }}" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-mail"></i></span> <!-- Contact icon -->
+                        <span class="nxl-mtext">Candidants</span>
+                    </a>
+                </li>
 
 
                 {{--                @can('admins')--}}
