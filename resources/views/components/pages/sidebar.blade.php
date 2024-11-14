@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="m-header">
             <a href="/dashboard" class="b-brand">
-                <h3 class="logo logo-lg">Apteke 1</h3>
+                <h3 class="logo logo-lg">Apteke 2</h3>
                 <h6 class="logo logo-sm"> </h6>
             </a>
         </div>

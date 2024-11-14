@@ -43,7 +43,7 @@
 
     <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
     <!--! BEGIN: Apps Title-->
-    <title>Apteke 1</title>
+    <title>Apteke 2</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/admins/assets/images/favicon.ico') }}">

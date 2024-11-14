@@ -1,24 +1,23 @@
 @extends('layouts.admin')
 
 @section('content')
-    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data" novalidate class="needs-validation" onsubmit="updateEditorContent()">
+    <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data" novalidate class="needs-validation" onsubmit="updateEditorContent()">
         @csrf
-        @method('PUT')
 
         <main class="nxl-container">
             <div class="nxl-content">
                 <div class="page-header">
                     <div class="page-header-left d-flex align-items-center">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Edit Product</h5>
+                            <h5 class="m-b-10">Создать Новость</h5>
                         </div>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item">Products</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Главная</a></li>
+                            <li class="breadcrumb-item">Новости</li>
                         </ul>
                     </div>
                     <div class="page-header-right ms-auto">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Создать</button>
                     </div>
                 </div>
 
@@ -37,7 +36,7 @@
                         <div class="col-lg-8">
                             <div class="card stretch">
                                 <div class="card-header">
-                                    <h5 class="card-title">Product Details</h5>
+                                    <h5 class="card-title">Детали Новости</h5>
                                 </div>
                                 <div class="card-body p-4">
                                     <ul class="nav-tab-items-wrapper nav nav-justified invoice-overview-tab-item">
@@ -55,75 +54,60 @@
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane fade show active" id="uzContent">
                                             <div class="form-group pb-3">
-                                                <label for="name_uz">Name (UZ):</label>
-                                                <input type="text" class="form-control" id="name_uz" name="name_uz" value="{{ old('name_uz', $product->name_uz) }}" required>
+                                                <label for="title_uz">Заголовок (UZ):</label>
+                                                <input type="text" class="form-control" id="title_uz" name="title_uz" value="{{ old('title_uz') }}" required>
                                             </div>
 
                                             <div class="form-group pb-3">
-                                                <label for="description_uz">Description (UZ):</label>
-                                                <textarea class="form-control" id="description_uz" name="description_uz" rows="3">{{ old('description_uz', $product->description_uz) }}</textarea>
-                                            </div>
-
-                                            <div class="form-group pb-3">
-                                                <label for="content_uz">Content (UZ):</label>
-                                                <div id="editor_uz" style="height:400px;">{!! old('content_uz', $product->content_uz) !!}</div>
+                                                <label for="content_uz">Контент (UZ):</label>
+                                                <div id="editor_uz" style="height:400px;"></div>
                                                 <input type="hidden" id="text_uz" name="content_uz">
                                             </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="enContent">
                                             <div class="form-group pb-3">
-                                                <label for="name_en">Name (EN):</label>
-                                                <input type="text" class="form-control" id="name_en" name="name_en" value="{{ old('name_en', $product->name_en) }}" required>
+                                                <label for="title_en">Заголовок (EN):</label>
+                                                <input type="text" class="form-control" id="title_en" name="title_en" value="{{ old('title_en') }}" required>
                                             </div>
 
                                             <div class="form-group pb-3">
-                                                <label for="description_en">Description (EN):</label>
-                                                <textarea class="form-control" id="description_en" name="description_en" rows="3">{{ old('description_en', $product->description_en) }}</textarea>
-                                            </div>
-
-                                            <div class="form-group pb-3">
-                                                <label for="content_en">Content (EN):</label>
-                                                <div id="editor_en" style="height:400px;">{!! old('content_en', $product->content_en) !!}</div>
+                                                <label for="content_en">Контент (EN):</label>
+                                                <div id="editor_en" style="height:400px;"></div>
                                                 <input type="hidden" id="text_en" name="content_en">
                                             </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="ruContent">
                                             <div class="form-group pb-3">
-                                                <label for="name_ru">Name (RU):</label>
-                                                <input type="text" class="form-control" id="name_ru" name="name_ru" value="{{ old('name_ru', $product->name_ru) }}" required>
+                                                <label for="title_ru">Заголовок (RU):</label>
+                                                <input type="text" class="form-control" id="title_ru" name="title_ru" value="{{ old('title_ru') }}" required>
                                             </div>
 
                                             <div class="form-group pb-3">
-                                                <label for="description_ru">Description (RU):</label>
-                                                <textarea class="form-control" id="description_ru" name="description_ru" rows="3">{{ old('description_ru', $product->description_ru) }}</textarea>
-                                            </div>
-
-                                            <div class="form-group pb-3">
-                                                <label for="content_ru">Content (RU):</label>
-                                                <div id="editor_ru" style="height:400px;">{!! old('content_ru', $product->content_ru) !!}</div>
+                                                <label for="content_ru">Контент (RU):</label>
+                                                <div id="editor_ru" style="height:400px;"></div>
                                                 <input type="hidden" id="text_ru" name="content_ru">
                                             </div>
                                         </div>
                                     </div>
 
-
+                                    <div class="form-group pb-3">
+                                        <label for="date">Дата:</label>
+                                        <input type="date" class="form-control" id="date" name="date" value="{{ old('date') }}" required>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card stretch">
                                 <div class="card-header">
-                                    <h5 class="card-title">Изображение продукта</h5>
+                                    <h5 class="card-title">Изображение Новости</h5>
                                 </div>
                                 <div class="card-body p-4">
                                     <div class="form-group pb-3">
-                                        <label for="image">Image:</label>
+                                        <label for="image">Изображение:</label>
                                         <input type="file" class="form-control" id="image" name="image">
-                                        @if($product->image)
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" width="100" class="mt-2">
-                                        @endif
                                     </div>
                                 </div>
                             </div>
