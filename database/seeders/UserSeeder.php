@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $superAdminId = DB::table('users')->insertGetId([
+      DB::table('users')->insertGetId([
             'full_name' => 'DORA',
             'email' => 'info@dora.uz',
             'password' => Hash::make('dOR@_5324'),
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $superAdminId = DB::table('users')->insertGetId([
+     DB::table('users')->insertGetId([
             'full_name' => 'Usmonov Ismoil',
             'email' => 'ismoil_007u@gmail.com',
             'password' => Hash::make('ismoil_007u@gmail.com'),

@@ -3,7 +3,6 @@
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\auth\SuperAdminController;
 use App\Http\Controllers\auth\AdminController;
-use App\Http\Controllers\auth\UserController;
 use Illuminate\Support\Facades\Route;
 
 

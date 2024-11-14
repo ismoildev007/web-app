@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class About extends Model
 {
-    /** @use HasFactory<\Database\Factories\AboutFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name_uz', 'name_ru', 'name_en',
+        'content_uz', 'content_ru', 'content_en',
+        'description_uz', 'description_ru', 'description_en',
+        'image',
+    ];
 }
