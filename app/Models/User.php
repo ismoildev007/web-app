@@ -11,13 +11,38 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const ROLE_SUPER_ADMIN = '2';
+    const ROLE_ADMIN = '1';
+    const ROLE_CUSTOMER = '0';
+
+    public function isSuperAdmin()
+    {
+        return $this->role == self::ROLE_SUPER_ADMIN;
+    }
+
+    public function isAdmin()
+    {
+        return $this->role == self::ROLE_ADMIN;
+    }
+
+    public function isCustomer()
+    {
+        return $this->role == self::ROLE_CUSTOMER;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'full_name',
+        'role',
+        'last_login',
+        'region',
+        'created_by',
+        'status',
+        'phone',
         'email',
         'password',
     ];
