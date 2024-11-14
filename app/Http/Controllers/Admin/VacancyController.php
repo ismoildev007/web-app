@@ -6,62 +6,77 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVacancyRequest;
 use App\Http\Requests\UpdateVacancyRequest;
 use App\Models\Vacancy;
+use Illuminate\Http\Request;
 
 class VacancyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $vacancies = Vacancy::all();
+        return view('admin.vacancies.index', compact('vacancies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.vacancies.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreVacancyRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_uz' => 'nullable|string',
+            'name_ru' => 'nullable|string',
+            'name_en' => 'nullable|string',
+            'title_uz' => 'nullable|string',
+            'title_ru' => 'nullable|string',
+            'title_en' => 'nullable|string',
+            'content_uz' => 'nullable|string',
+            'content_ru' => 'nullable|string',
+            'content_en' => 'nullable|string',
+            'image' => 'nullable|string',
+            'date' => 'nullable|date',
+            'status' => 'nullable|string',
+        ]);
+
+        Vacancy::create($request->all());
+
+        return redirect()->route('vacancies.index')->with('success', 'Vakansiya muvaffaqiyatli qo\'shildi.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Vacancy $vacancy)
+    public function edit($id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        return view('admin.vacancies.edit', compact('vacancy'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Vacancy $vacancy)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'name_uz' => 'nullable|string',
+            'name_ru' => 'nullable|string',
+            'name_en' => 'nullable|string',
+            'title_uz' => 'nullable|string',
+            'title_ru' => 'nullable|string',
+            'title_en' => 'nullable|string',
+            'content_uz' => 'nullable|string',
+            'content_ru' => 'nullable|string',
+            'content_en' => 'nullable|string',
+            'image' => 'nullable|string',
+            'date' => 'nullable|date',
+            'status' => 'nullable|string',
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateVacancyRequest $request, Vacancy $vacancy)
-    {
-        //
-    }
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->update($request->all());
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Vacancy $vacancy)
+        return redirect()->route('vacancies.index')->with('success', 'Vakansiya muvaffaqiyatli yangilandi.');
+    }
+    public function destroy($id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->delete();
+
+        return redirect()->route('vacancies.index')->with('success', 'Vakansiya muvaffaqiyatli o\'chirildi.');
     }
 }

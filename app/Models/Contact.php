@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    /** @use HasFactory<\Database\Factories\ContactFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'address_uz', 'address_ru', 'address_en',
+        'email', 'phone1', 'phone2',
+        'facebook', 'instagram', 'telegram', 'youtube',
+    ];
 }
