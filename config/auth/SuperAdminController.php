@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\auth;
+namespace config\auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class SuperAdminController extends Controller
 {

@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="m-header">
             <a href="/dashboard" class="b-brand">
-                <h3 class="logo logo-lg">Apteke 2</h3>
+                <h3 class="logo logo-lg">Cheff Catrin</h3>
                 <h6 class="logo logo-sm"> </h6>
             </a>
         </div>
@@ -22,39 +22,15 @@
                     </a>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
-                    <a href="{{ route('abouts.index') }}" class="nxl-link">
+                    <a href="{{ route('categories.index') }}" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-info"></i></span> <!-- About icon -->
-                        <span class="nxl-mtext">About</span>
-                    </a>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="{{ route('news.index') }}" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-globe"></i></span> <!-- News icon -->
-                        <span class="nxl-mtext">News</span>
+                        <span class="nxl-mtext">Category</span>
                     </a>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="{{ route('products.index') }}" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-briefcase"></i></span> <!-- Products icon -->
                         <span class="nxl-mtext">Products</span>
-                    </a>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="{{ route('vacancies.index') }}" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-help-circle"></i></span> <!-- FAQ icon -->
-                        <span class="nxl-mtext">Vacancies</span>
-                    </a>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="{{ route('contacts.index') }}" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-mail"></i></span> <!-- Contact icon -->
-                        <span class="nxl-mtext">Contact</span>
-                    </a>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="{{ route('candidants.index') }}" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-mail"></i></span> <!-- Contact icon -->
-                        <span class="nxl-mtext">Candidants</span>
                     </a>
                 </li>
 

@@ -11,7 +11,7 @@
                         <h5 class="m-b-10">Список продуктов</h5>
                     </div>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('admins.dashboard') }}">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0)">Главная</a></li>
                         <li class="breadcrumb-item">Продукты</li>
                     </ul>
                 </div>
@@ -41,9 +41,8 @@
                                         <thead>
                                         <tr>
                                             <th>№</th>
-                                            <th>Название (УЗ)</th>
-                                            <th>Название (РУ)</th>
-                                            <th>Название (АН)</th>
+                                            <th>Название</th>
+                                            <th>description</th>
                                             <th>Изображение</th>
                                                 <th class="text-end">Действия</th>
                                         </tr>
@@ -52,9 +51,8 @@
                                         @foreach ($products as $product)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $product->name_uz }}</td>
-                                                <td>{{ $product->name_ru }}</td>
-                                                <td>{{ $product->name_en }}</td>
+                                                <td>{{ $product->name }}</td>
+                                                <td>{{ $product->description }}</td>
                                                 <td>
                                                     @if ($product->image)
                                                         <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name_en }}" width="50">
@@ -62,10 +60,6 @@
                                                 </td>
                                                 <td >
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a href="{{ route('products.show', $product->id) }}"
-                                                           class="avatar-text avatar-md d-none">
-                                                            <i class="feather feather-eye"></i>
-                                                        </a>
                                                         <a href="{{ route('products.edit', $product->id) }}"
                                                            class="avatar-text avatar-md">
                                                             <i class="feather feather-edit-3"></i>

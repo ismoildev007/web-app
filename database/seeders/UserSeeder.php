@@ -37,18 +37,5 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        $adminId = DB::table('users')->insertGetId([
-            'full_name' => 'Admin',
-            'email' => 'info@mi.com',
-            'password' => Hash::make('info@mi.com'),
-            'role' => 1, // Admin
-            'phone' => '987654321',
-            'status' => 1,
-            'last_login' => now(),
-            'region' => 'Tashkent',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
     }
 }
