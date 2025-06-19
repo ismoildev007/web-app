@@ -87,7 +87,7 @@ class TelegramBotController extends Controller
             ->row([
                 Keyboard::inlineButton([
                     'text' => 'Mahsulotlarni ko\'rish',
-                    'web_app' => ['url' => 'https://t.me/cheffcatering_bot/Cheffcatering'],
+                    'web_app' => ['url' => 'https://your-web-app-domain.com/cheffcatering'],
                 ]),
             ]);
 
