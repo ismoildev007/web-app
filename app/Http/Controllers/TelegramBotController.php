@@ -99,12 +99,4 @@ class TelegramBotController extends Controller
             'reply_markup' => $keyboard,
         ]);
     }
-
-    public function setWebhook()
-    {
-        $webhookUrl = env('TELEGRAM_WEBHOOK_URL');
-        $response = Telegram::setWebhook(['url' => $webhookUrl]);
-
-        return response()->json($response);
-    }
 }
