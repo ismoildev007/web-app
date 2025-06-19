@@ -20,18 +20,18 @@ class TelegramBotController extends Controller
         $lastName = $user->getLastName() ?? '';
         $fullName = trim($firstName . ' ' . $lastName);
 
-        // /start buyrug'i
-        if ($message->getText() === '/start') {
+        // /start buyrug'i har safar ishlaydi
+        if ($message && $message->getText() === '/start') {
             $this->sendWelcomeMessage($chatId, $fullName);
         }
 
         // Kontakt ulashilganini tekshirish
-        if ($message->getContact()) {
+        if ($message && $message->getContact()) {
             $this->handleContactReceived($chatId);
         }
 
         // Mahsulotlar tugmasi bosilganda
-        if ($message->getText() === 'Mahsulotlar') {
+        if ($message && $message->getText() === 'Mahsulotlar') {
             $this->sendWebApp($chatId);
         }
 
