@@ -89,7 +89,7 @@ class TelegramBotController extends Controller
             ->row([
                 Keyboard::inlineButton([
                     'text' => 'Mahsulotlarni ko\'rish',
-                    'web_app' => ['url' => 'https://rentmax.uz/api/telegram/webhook'], // Web App URL ni to'g'ri ko'rsating
+                    'web_app' => ['url' => 'https://rentmax.uz'], // Web App URL ni to'g'ri ko'rsating
                 ]),
             ]);
 
