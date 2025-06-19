@@ -1,7 +1,8 @@
 <?php
 
-namespace config\auth;
+namespace App\Http\Controllers\auth;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,7 @@ class AuthController extends Controller{
 
             switch ($user->role) {
                 case '1':
-                    return redirect()->route('admins.dashboard');
+                    return redirect()->route('admin.dashboard');
                 case '2':
                     return redirect()->route('superAdmin.dashboard');
                 default:

@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\auth\AdminController;
+use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\auth\SuperAdminController;
 use App\Http\Controllers\Frontend\MainController;
-use config\auth\AdminController;
-use config\auth\AuthController;
-use config\auth\SuperAdminController;
 use Illuminate\Support\Facades\Route;
 
 
