@@ -12,27 +12,29 @@ class TelegramBotController extends Controller
     {
         $update = Telegram::getWebhookUpdate();
 
-        // Foydalanuvchi ma'lumotlari
-        $chatId = $update->getMessage()->getChat()->getId();
-        $message = $update->getMessage();
-        $user = $update->getMessage()->getFrom();
-        $firstName = $user->getFirstName();
-        $lastName = $user->getLastName() ?? '';
-        $fullName = trim($firstName . ' ' . $lastName);
+        // Agar yangi xabar bo'lsa
+        if (isset($update['message'])) {
+            $message = $update['message'];
+            $chatId = $message['chat']['id'];
+            $user = $message['from'];
+            $firstName = $user['first_name'] ?? '';
+            $lastName = $user['last_name'] ?? '';
+            $fullName = trim($firstName . ' ' . $lastName);
 
-        // /start buyrug'i har safar ishlaydi
-        if ($message && $message->getText() === '/start') {
-            $this->sendWelcomeMessage($chatId, $fullName);
-        }
+            // /start buyrug'i har safar ishlaydi
+            if (isset($message['text']) && $message['text'] === '/start') {
+                $this->sendWelcomeMessage($chatId, $fullName);
+            }
 
-        // Kontakt ulashilganini tekshirish
-        if ($message && $message->getContact()) {
-            $this->handleContactReceived($chatId);
-        }
+            // Kontakt ulashilganini tekshirish
+            if (isset($message['contact'])) {
+                $this->handleContactReceived($chatId);
+            }
 
-        // Mahsulotlar tugmasi bosilganda
-        if ($message && $message->getText() === 'Mahsulotlar') {
-            $this->sendWebApp($chatId);
+            // Mahsulotlar tugmasi bosilganda
+            if (isset($message['text']) && $message['text'] === 'Mahsulotlar') {
+                $this->sendWebApp($chatId);
+            }
         }
 
         return response('OK', 200);
@@ -87,7 +89,7 @@ class TelegramBotController extends Controller
             ->row([
                 Keyboard::inlineButton([
                     'text' => 'Mahsulotlarni ko\'rish',
-                    'web_app' => ['url' => 'https://t.me/cheffcatering_bot/Cheffcatering'],
+                    'web_app' => ['url' => 'https://rentmax.uz/api/telegram/webhook'], // Web App URL ni to'g'ri ko'rsating
                 ]),
             ]);
 
