@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
         $image = null;
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('images', 'public');
+            $image = $request->file('image')->store('categories', 'public');
         }
 
         Category::create([
@@ -72,7 +72,7 @@ class CategoryController extends Controller
             if ($image) {
                 Storage::delete('public/' . $image);
             }
-            $image = $request->file('image')->store('images', 'public');
+            $image = $request->file('image')->store('categories', 'public');
         }
 
         $category->update([
