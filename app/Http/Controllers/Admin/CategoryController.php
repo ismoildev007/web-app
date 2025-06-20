@@ -80,9 +80,6 @@ class CategoryController extends Controller
             'day' => $request->day,
             'image' => $image,
         ]);
-
-        $category->update($request->all());
-
         return redirect()->route('categories.index')->with('success', 'Kategoriya yangilandi!');
     }
 
