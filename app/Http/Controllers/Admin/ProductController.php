@@ -7,11 +7,18 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || !in_array(Auth::user()->role, [1, 2])) {
+            abort(403, 'Ushbu sahifaga kirish ruxsati yo‘q.');
+        }
+    }
     public function index()
     {
         $products = Product::all();
@@ -36,7 +43,7 @@ class ProductController extends Controller
             'description_uz' => 'nullable|string',
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
         ]);
 
         $image = null;
@@ -80,7 +87,7 @@ class ProductController extends Controller
             'description_uz' => 'nullable|string',
             'description_ru' => 'nullable|string',
             'description_en' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
         ]);
 
         $product = Product::findOrFail($id);

@@ -1,5 +1,6 @@
 @extends('layouts.auth')
 
+
 @section('content')
     <main class="auth-minimal-wrapper">
         <div class="auth-minimal-inner">

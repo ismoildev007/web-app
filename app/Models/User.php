@@ -15,21 +15,6 @@ class User extends Authenticatable
     const ROLE_ADMIN = '1';
     const ROLE_CUSTOMER = '0';
 
-    public function isSuperAdmin()
-    {
-        return $this->role == self::ROLE_SUPER_ADMIN;
-    }
-
-    public function isAdmin()
-    {
-        return $this->role == self::ROLE_ADMIN;
-    }
-
-    public function isCustomer()
-    {
-        return $this->role == self::ROLE_CUSTOMER;
-    }
-
     /**
      * The attributes that are mass assignable.
      *

@@ -52,8 +52,8 @@
 <div class="container-fluid p-4">
     <!-- Header -->
     <div class="text-center mb-5">
-        <h1 class="display-6 fw-bold text-dark mb-2">Online Do'kan</h1>
-        <p class="text-muted">Kategoriyani tanlang</p>
+        <h1 class="display-6 fw-bold text-dark mb-2">Chef Diet - sog'lom oziq-ovqat yetkazib berish!</h1>
+        <p class="text-muted">( O'z kategoriyangizni tanlang! )</p>
     </div>
 
     <!-- Categories Grid -->

@@ -23,8 +23,8 @@ class AuthController extends Controller{
             $user = Auth::user();
 
             switch ($user->role) {
-                case '1':
-                    return redirect()->route('admin.dashboard');
+//                case '1':
+//                    return redirect()->route('admin.dashboard');
                 case '2':
                     return redirect()->route('superAdmin.dashboard');
                 default:

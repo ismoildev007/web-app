@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\MainController;
 use Illuminate\Support\Facades\Route;
 
 
+
 //Admin panel login register start
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');

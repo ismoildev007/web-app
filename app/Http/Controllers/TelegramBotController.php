@@ -42,7 +42,7 @@ class TelegramBotController extends Controller
 
     private function sendWelcomeMessage($chatId, $fullName)
     {
-        $text = "Assalomu alekum {$fullName}! Cheffcatering diet taomlari restaurantimizga xush kelibsiz!";
+        $text = "Assalomu alekum {$fullName}! Chef Diet taomlariga xush kelibsiz! \n\n( Iltimos kontaktingizni ulashing )";
 
         // Kontaktni ulashish tugmasi
         $keyboard = Keyboard::make()
@@ -95,7 +95,7 @@ class TelegramBotController extends Controller
 
         Telegram::sendMessage([
             'chat_id' => $chatId,
-            'text' => 'Mahsulotlarni ko\'rish uchun quyidagi tugmani bosing:',
+            'text' => 'O\'z kategoriyangizni ko\'rish uchun quyidagi tugmani bosing!',
             'reply_markup' => $keyboard,
         ]);
     }
