@@ -36,7 +36,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
         ]);
 
         $image = null;
@@ -66,7 +66,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
         ]);
 
         $product = Product::findOrFail($id);

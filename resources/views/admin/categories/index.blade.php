@@ -51,7 +51,11 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $product->name }}</td>
-                                                <td><i class="fas {{ $product->icon }}"></i></td>
+                                                <td>
+                                                    @if ($product->image)
+                                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name_en }}" width="50">
+                                                    @endif
+                                                </td>
                                                 <td >
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a href="{{ route('categories.edit', $product->id) }}"

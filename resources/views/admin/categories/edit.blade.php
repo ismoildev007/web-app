@@ -52,14 +52,6 @@
                                             </div>
 
                                             <div class="form-group pb-3">
-                                                <label for="icon">Ikonka (Font Awesome klassi)</label>
-                                                <input type="text" class="form-control" id="icon" name="icon" value="{{ old('icon', $category->icon) }}" placeholder="Masalan: fa-mobile-alt">
-                                                @error('icon')
-                                                <div class="text-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group pb-3">
                                                 <label for="day">Kun</label>
                                                 <select class="form-control" id="day" name="day">
                                                     <option value="">Tanlanmagan</option>
@@ -76,6 +68,22 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card stretch">
+                                <div class="card-header">
+                                    <h5 class="card-title">Изображение продукта</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="form-group pb-3">
+                                        <label for="image">Image:</label>
+                                        <input type="file" class="form-control" id="image" name="image">
+                                        @if($category->image)
+                                            <img src="{{ asset('storage/' . $category->image) }}" alt="Product Image" width="100" class="mt-2">
+                                        @endif
                                     </div>
                                 </div>
                             </div>

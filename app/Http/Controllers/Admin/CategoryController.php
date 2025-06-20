@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -32,12 +34,20 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'icon' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
             'day' => 'nullable|integer',
         ]);
 
-        Category::create($request->all());
+        $image = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('images', 'public');
+        }
 
+        Category::create([
+            'name' => $request->name,
+            'day' => $request->day,
+            'image' => $image,
+        ]);
         return redirect()->route('categories.index')->with('success', 'Kategoriya muvaffaqiyatli yaratildi!');
     }
 
@@ -48,12 +58,27 @@ class CategoryController extends Controller
     }
 
     // Kategoriya yangilash
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'icon' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
             'day' => 'nullable|integer',
+        ]);
+        $category = Category::findOrFail($id);
+
+        $image = $category->image;
+        if ($request->hasFile('image')) {
+            if ($image) {
+                Storage::delete('public/' . $image);
+            }
+            $image = $request->file('image')->store('images', 'public');
+        }
+
+        $category->update([
+            'name' => $request->name,
+            'day' => $request->day,
+            'image' => $image,
         ]);
 
         $category->update($request->all());

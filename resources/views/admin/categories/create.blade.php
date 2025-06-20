@@ -51,14 +51,6 @@
                                             </div>
 
                                             <div class="form-group pb-3">
-                                                <label for="icon">Ikonka (Font Awesome klassi)</label>
-                                                <input type="text" class="form-control" id="icon" name="icon" value="{{ old('icon') }}" placeholder="Masalan: fa-mobile-alt">
-                                                @error('icon')
-                                                <div class="text-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group pb-3">
                                                 <label for="day">Kun</label>
                                                 <select class="form-control" id="day" name="day">
                                                     <option value="">Tanlanmagan</option>
@@ -75,6 +67,19 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card stretch">
+                                <div class="card-header">
+                                    <h5 class="card-title">Изображение продукта</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="form-group pb-3">
+                                        <label for="image">Изображение:</label>
+                                        <input type="file" class="form-control" id="image" name="image">
                                     </div>
                                 </div>
                             </div>
