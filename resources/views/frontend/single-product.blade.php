@@ -54,7 +54,7 @@
         <div class="col-md-6">
             <div class="product-image">
                 @if ($product->image)
-                    <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 @else
                     <i class="fas {{ $product->icon ?? 'fa-box' }}"></i>
                 @endif

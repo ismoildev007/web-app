@@ -68,7 +68,7 @@
                     <div class="product-card bg-white rounded-4 overflow-hidden cursor-pointer">
                         <div class="product-image">
                             @if ($product->image)
-                                <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
                             @else
                                 <i class="fas {{ $product->icon ?? 'fa-box' }}"></i>
                             @endif
