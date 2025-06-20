@@ -35,7 +35,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
-            'day' => 'nullable|integer',
+            'day' => 'nullable|string|max:255',
         ]);
 
         $image = null;
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
-            'day' => 'nullable|integer',
+            'day' => 'nullable|string|max:255',
         ]);
         $category = Category::findOrFail($id);
 

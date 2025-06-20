@@ -55,13 +55,13 @@
                                                 <label for="day">Kun</label>
                                                 <select class="form-control" id="day" name="day">
                                                     <option value="">Tanlanmagan</option>
-                                                    <option value="1" {{ old('day', $category->day) == '1' ? 'selected' : '' }}>Dushanba</option>
-                                                    <option value="2" {{ old('day', $category->day) == '2' ? 'selected' : '' }}>Seshanba</option>
-                                                    <option value="3" {{ old('day', $category->day) == '3' ? 'selected' : '' }}>Chorshanba</option>
-                                                    <option value="4" {{ old('day', $category->day) == '4' ? 'selected' : '' }}>Payshanba</option>
-                                                    <option value="5" {{ old('day', $category->day) == '5' ? 'selected' : '' }}>Juma</option>
-                                                    <option value="6" {{ old('day', $category->day) == '6' ? 'selected' : '' }}>Shanba</option>
-                                                    <option value="7" {{ old('day', $category->day) == '7' ? 'selected' : '' }}>Yakshanba</option>
+                                                    <option value="monday" {{ old('day', $category->day) == 'monday' ? 'selected' : '' }}>Dushanba</option>
+                                                    <option value="tuesday" {{ old('day', $category->day) == 'tuesday' ? 'selected' : '' }}>Seshanba</option>
+                                                    <option value="wednesday" {{ old('day', $category->day) == 'wednesday' ? 'selected' : '' }}>Chorshanba</option>
+                                                    <option value="thursday" {{ old('day', $category->day) == 'thursday' ? 'selected' : '' }}>Payshanba</option>
+                                                    <option value="friday" {{ old('day', $category->day) == 'friday' ? 'selected' : '' }}>Juma</option>
+                                                    <option value="saturday" {{ old('day', $category->day) == 'saturday' ? 'selected' : '' }}>Shanba</option>
+                                                    <option value="sunday" {{ old('day', $category->day) == 'sunday' ? 'selected' : '' }}>Yakshanba</option>
                                                 </select>
                                                 @error('day')
                                                 <div class="text-danger">{{ $message }}</div>
