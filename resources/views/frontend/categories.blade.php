@@ -108,9 +108,9 @@
             <div class="col-6 col-md-4 col-lg-3">
                 <a href="{{ route('category.show', $category->slug) }}" class="text-decoration-none">
                     <div class="category-card bg-white rounded-4 p-4 text-center cursor-pointer">
-                        <div class="category-icon bg-blue-custom mb-2">
+                        <div class="category-icon mb-2">
                             @if ($category->image)
-                                <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="width: 40px; height: 40px; object-fit: contain;">
+                                <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="width: 50px; height: 50px; object-fit: contain; border-radius: 10px">
                             @else
                                 <span class="text-muted">Rasm yo‘q</span>
                             @endif
