@@ -51,12 +51,6 @@
                                                 <label for="description">Description</label>
                                                 <textarea class="form-control" id="description" name="description" rows="3">{{ old('description', $product->description) }}</textarea>
                                             </div>
-
-                                            <div class="form-group pb-3">
-                                                <label for="content">Content</label>
-                                                <div id="editor" style="height:400px;">{!! old('content', $product->content) !!}</div>
-                                                <input type="hidden" id="content" name="content">
-                                            </div>
                                         </div>
                                     </div>
 

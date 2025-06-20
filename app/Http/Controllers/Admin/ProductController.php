@@ -35,7 +35,6 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'content' => 'nullable|string',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
         ]);
@@ -47,7 +46,6 @@ class ProductController extends Controller
 
         Product::create([
             'name' => $request->name,
-            'content' => $request->content,
             'description' => $request->description,
             'image' => $image,
         ]);
@@ -67,7 +65,6 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'content' => 'nullable|string',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:4096',
         ]);
@@ -84,7 +81,6 @@ class ProductController extends Controller
 
         $product->update([
             'name' => $request->name,
-            'content' => $request->content,
             'description' => $request->description,
             'image' => $image,
         ]);

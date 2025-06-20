@@ -51,12 +51,6 @@
                                                 <label for="description">Описание</label>
                                                 <textarea class="form-control" id="description" name="description" rows="3">{{ old('description') }}</textarea>
                                             </div>
-
-                                            <div class="form-group pb-3">
-                                                <label for="content">Содержимое</label>
-                                                <div id="editor" style="height:400px;"></div>
-                                                <input type="hidden" id="content" name="content">
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
