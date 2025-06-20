@@ -68,6 +68,7 @@
             </div>
             <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>
             <p class="text-muted mb-4">{{ $product->description ?? 'Mahsulot haqida ma\'lumot yo\'q' }}</p>
+            <p class="text-muted mb-4">{!! $product->content ?? 'Mahsulot haqida ma\'lumot yo\'q' !!}</p>
             <a href="{{ route('category.show', $product->category->slug) }}" class="text-muted small">
                 <i class="fas fa-folder me-1"></i> {{ $product->category->name }}
             </a>
