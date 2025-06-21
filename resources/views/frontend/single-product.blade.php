@@ -68,7 +68,7 @@
 {{--                <span class="text-muted">{{ $product->rating ?? '4.5' }}</span>--}}
 {{--            </div>--}}
 {{--            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>--}}
-            <span class="text-muted">Har kuni</span>
+            <span class="text-muted mb-2">Har kuni!</span>
             <h3 class="text-primary mb-3">Nonushta 09:00 dan 10:00 gacha</h3>
             <h3 class="text-primary mb-3">Tushlik 12:00 dan 13:00 gacha</h3>
             <p class="text-muted mb-4">{{ $product->description ?? 'Mahsulot haqida ma\'lumot yo\'q' }}</p>
