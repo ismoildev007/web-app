@@ -54,7 +54,8 @@
             <button class="btn btn-link text-decoration-none p-0 me-3" onclick="goBack()">
                 <i class="fas fa-arrow-left text-muted fs-5"></i>
             </button>
-            <h5 class="mb-0 fw-semibold">{{ $category->name ?? 'Kategoriya' }}</h5>
+{{--            <h5 class="mb-0 fw-semibold">{{ $category->name ?? 'Kategoriya' }}</h5>--}}
+            <h5 class="mb-0 fw-semibold">Suvni ichishni unutmaganingiz uchun rahmat!</h5>
         </div>
     </div>
 </div>
