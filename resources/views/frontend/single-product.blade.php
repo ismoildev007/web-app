@@ -43,7 +43,8 @@
             <button class="btn btn-link text-decoration-none p-0 me-3" onclick="goBack()">
                 <i class="fas fa-arrow-left text-muted fs-5"></i>
             </button>
-            <h5 class="mb-0 fw-semibold">{{ $product->name ?? 'Mahsulot' }}</h5>
+{{--            <h5 class="mb-0 fw-semibold">{{ $product->name ?? 'Mahsulot' }}</h5>--}}
+            <h5 class="mb-0 fw-semibold">Suvni ichishni unutmaganingiz uchun rahmat!</h5>
         </div>
     </div>
 </div>
@@ -61,12 +62,15 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h2 class="fw-bold text-dark mb-3">{{ $product->name }}</h2>
-            <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-star text-warning me-1" style="font-size: 1rem;"></i>
-                <span class="text-muted">{{ $product->rating ?? '4.5' }}</span>
-            </div>
-            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>
+            <h2 class="fw-bold text-dark mb-3 mt-3">{{ $product->name }}</h2>
+{{--            <div class="d-flex align-items-center mb-3">--}}
+{{--                <i class="fas fa-star text-warning me-1" style="font-size: 1rem;"></i>--}}
+{{--                <span class="text-muted">{{ $product->rating ?? '4.5' }}</span>--}}
+{{--            </div>--}}
+{{--            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>--}}'
+            <span class="text-muted">Har kuni</span>
+            <p class="text-primary fw-bold mb-3 fs-4">Nonushta 09:00 dan 10:00 gacha</p>
+            <p class="text-primary fw-bold mb-3 fs-4">Tushlik 12:00 dan 13:00 gacha</p>
             <p class="text-muted mb-4">{{ $product->description ?? 'Mahsulot haqida ma\'lumot yo\'q' }}</p>
             <a href="{{ route('category.show', $product->category->slug) }}" class="text-muted small">
                 <i class="fas fa-folder me-1"></i> {{ $product->category->name }}

@@ -75,11 +75,11 @@
                         </div>
                         <div class="p-3">
                             <h6 class="fw-semibold text-dark mb-2 small">{{ $product->name }}</h6>
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="fas fa-star text-warning me-1" style="font-size: 0.8rem;"></i>
-                                <span class="text-muted small">{{ $product->rating ?? '4.5' }}</span>
-                            </div>
-                            <p class="text-primary fw-bold mb-0">{{ number_format($product->price ?? 0) }} so'm</p>
+{{--                            <div class="d-flex align-items-center mb-2">--}}
+{{--                                <i class="fas fa-star text-warning me-1" style="font-size: 0.8rem;"></i>--}}
+{{--                                <span class="text-muted small">{{ $product->rating ?? '4.5' }}</span>--}}
+{{--                            </div>--}}
+{{--                            <p class="text-primary fw-bold mb-0">{{ number_format($product->price ?? 0) }} so'm</p>--}}
                         </div>
                     </div>
                 </a>
