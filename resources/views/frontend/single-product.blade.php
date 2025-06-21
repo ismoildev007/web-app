@@ -69,8 +69,8 @@
 {{--            </div>--}}
 {{--            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>--}}
             <span class="text-muted">Har kuni</span>
-            <p class="text-primary mb-3 fs-4">Nonushta 09:00 dan 10:00 gacha</p>
-            <p class="text-primary mb-3 fs-4">Tushlik 12:00 dan 13:00 gacha</p>
+            <h3 class="text-primary mb-3 fs-4">Nonushta 09:00 dan 10:00 gacha</h3>
+            <h3 class="text-primary mb-3 fs-4">Tushlik 12:00 dan 13:00 gacha</h3>
             <p class="text-muted mb-4">{{ $product->description ?? 'Mahsulot haqida ma\'lumot yo\'q' }}</p>
             <a href="{{ route('category.show', $product->category->slug) }}" class="text-muted small">
                 <i class="fas fa-folder me-1"></i> {{ $product->category->name }}
