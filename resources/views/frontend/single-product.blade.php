@@ -67,10 +67,10 @@
 {{--                <i class="fas fa-star text-warning me-1" style="font-size: 1rem;"></i>--}}
 {{--                <span class="text-muted">{{ $product->rating ?? '4.5' }}</span>--}}
 {{--            </div>--}}
-{{--            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>--}}'
+{{--            <p class="text-primary fw-bold mb-3 fs-4">{{ number_format($product->price ?? 0) }} so'm</p>--}}
             <span class="text-muted">Har kuni</span>
-            <p class="text-primary fw-bold mb-3 fs-4">Nonushta 09:00 dan 10:00 gacha</p>
-            <p class="text-primary fw-bold mb-3 fs-4">Tushlik 12:00 dan 13:00 gacha</p>
+            <p class="text-primary mb-3 fs-4">Nonushta 09:00 dan 10:00 gacha</p>
+            <p class="text-primary mb-3 fs-4">Tushlik 12:00 dan 13:00 gacha</p>
             <p class="text-muted mb-4">{{ $product->description ?? 'Mahsulot haqida ma\'lumot yo\'q' }}</p>
             <a href="{{ route('category.show', $product->category->slug) }}" class="text-muted small">
                 <i class="fas fa-folder me-1"></i> {{ $product->category->name }}
